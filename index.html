@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- add our css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- add star icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo-holder">
+            <a href="#"><img src="./img/MainLogo.png" alt="Header main logo"></a>
+        </div>
+        <nav class="desktop-nav">
+            <menu>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">C</a></li>
+            </menu>
+        </nav>
+        <button class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav class="mobile-nav">
+            <menu>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">View Checkout</a></li>
+            </menu>
+        </nav>
+    </header>
+    <section class="masthead">
+        <div class="mask">
+            <h1>FOR THE FEARLESS</h1>
+        </div>
+    </section>
+    <main>
+        <p class="company-mantra">
+        We settle for nothing but the best both on and off the mat, with premium gear and expirienced fighters
+        </p>
+        <section class="cta">
+            <div>
+                <span class="mask">
+                    <p id="modalBtn">BOOK A LESSON</p>
+                </span>
+            </div>
+            <div>
+                <span class="mask">
+                    <a href="index.html"><p>SEE OUR PRODUCTS</p></a>
+                </span>
+            </div>
+        </section>
+        <section class="popup-form">
+            <!-- The Modal -->
+            <div id="booking-modal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="somefile.php" method="post">
+                  <h4>Time Date and You</h4>
+                  <div class="popup-form-content">
+                    <input type="date" name="date">
+                    <input type="text" name="fname" placeholder="First Name">
+                    <input type="text" name="lname" placeholder="Last Name">
+                    <input type="email" name="email" placeholder="Your Email">
+                    <div>
+                        <input type="submit" value="Submit" name="submit">
+                    </div>
+                  </div>
+                </form>
+          </section>
+        <section class="reviews">
+            <h2>DON'T JUST TAKE OUR WORD FOR IT</h2>
+
+            <div class="all-reviews">
+                <div class="review">
+                    <div class="stars">
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                    </div>
+                    <p>Their punches REALLY hurt, they know their stuff!</p>
+                </div>
+    
+                <div class="review">
+                    <div class="stars">
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                    </div>
+                    <p>Their punches REALLY hurt, they know their stuff!</p>
+                </div>
+    
+                <div class="review">
+                    <div class="stars">
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star star-checked"></span>
+                    </div>
+                    <p>Their punches REALLY hurt, they know their stuff!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-logo-holder">
+            <a href="#"><img src="./img/MainLogo.png" alt="Header main logo"></a>
+        </div>
+        <div class="social-icons">
+            <div>
+                <a href="index.html"><img src="./img/SocialMediaIcons/5282541_fb_social media_facebook_facebook logo_social network_icon.png" alt="facebook logo"></a>
+                <a href="index.html"><img src="./img/SocialMediaIcons/5282544_camera_instagram_social media_social network_instagram logo_icon.png" alt="instagram logo"></a>
+            </div>
+            <div>
+                <a href="index.html"><img src="./img/SocialMediaIcons/5282545_pin_pinterest_inspiration_pinterest logo_icon.png" alt="pintrest logo"></a>
+                <a href="index.html"><img src="./img/SocialMediaIcons/5282551_tweet_twitter_twitter logo_icon.png" alt="twitter logo"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var burger = document.getElementsByClassName("burger")[0];
+        var mobileNav = document.getElementsByClassName("mobile-nav")[0];
+        // Get the modal
+        var modal = document.getElementById("booking-modal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("modalBtn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        burger.onclick = function() {
+            if(mobileNav.style.display == "none"){
+                mobileNav.style.display = "block"
+            }else {
+                mobileNav.style.display = "none"
+            }
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

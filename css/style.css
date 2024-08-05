@@ -1,0 +1,400 @@
+html{scroll-behavior: smooth;}
+
+body{
+    margin: 0px;
+    background-color: #fefefe;
+}
+
+/* basic font styling */
+h1,h2,h3,h4,h5,h6{
+    font-size: 1.5em;
+}
+
+p,a,li,label,figcaption,td{
+    text-decoration: none;
+}
+
+
+/* header */
+header{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4171E;
+}
+header div{
+    margin: 0 20px;
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+}
+header div img {
+    width: auto;
+    height: 100%;
+}
+header .desktop-nav menu{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+header .desktop-nav menu li {
+    padding: 0px 10px;
+    margin-right: 20px;
+}
+header .desktop-nav menu li a{
+    font-size: 1.5rem;
+    color: #fefefe;
+}
+.burger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 15px;
+    display: none;
+    z-index: 4;
+}
+.burger:hover {
+    cursor: pointer;
+}
+.burger div {
+    width: 35px;
+    height: 5px;
+    background-color: #fefefe;
+    margin: 6px 0;
+}
+.mobile-nav {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 200px; /* Position below the header */
+    left: 0;
+    width: 100vw;
+    background: #f0f0f0;    
+    z-index: 3;
+    transition: .5s;
+    transition-delay: .5s;
+}
+.mobile-nav menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.mobile-nav menu li{
+    background-color: #f0f0f0;
+}
+.mobile-nav menu li:hover,
+.mobile-nav menu li:active{
+    background-color: #fefefe;
+}
+.mobile-nav menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0e0e0e;
+    font-weight: bold;
+    display: block;
+    padding: 30px;
+}
+/* footer */
+footer{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4171E;
+}
+footer .footer-logo-holder{
+    margin: 0 20px;
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+}
+footer .footer-logo-holder img {
+    width: auto;
+    height: 100%;
+}
+footer .social-icons {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* the asformentioned social media icon box */
+footer .social-icons div{
+    height: 25%; /* Adjust height to auto */
+    width: auto;
+    display: flex;
+}
+/* the images themselves */
+footer .social-icons div img {
+    margin: 0 10px;
+    padding: 0 10px;
+    height: 100%; /* Set a fixed height for social media icons */
+    width: auto;
+    transition: all .25s ease;
+}
+/* alittle hover to clearly show which logo is being chosen */
+footer .social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* HOME */
+/* Masthead */
+.masthead{
+    background-image: url("../img/MastHead1.jpg");
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+}
+.mask{
+    background-color: rgba(2, 2, 0, .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.masthead .mask h1{
+    color: #f8f8f8;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.8);
+    font-size: 6em;
+    text-align: center;
+    text-wrap: wrap;
+}
+/* main */
+    /* paragraph */
+.company-mantra{
+    font-size: 2.5em;
+    text-align: center;
+    text-wrap: wrap;
+    padding: 100px 20%;
+    background-color: #B52F31;
+    color: #fefefe;
+}
+    /* call to action */
+.cta{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+}
+.cta div:nth-child(1){
+    background-image: url("../img/TrainingCallToAction.webp");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    width: 50%;
+}
+.cta div:nth-child(2){
+    background-image: url("../img/GearCallToAction.jpg");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    width: 50%;
+}
+.cta .mask {
+    background-color: rgba(2, 2, 0, .7);
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: 0;
+    transition: all .2s ease;
+}
+.cta .mask p{
+    background-color: #f8f8f8;
+    color: #0e0e0e;
+    border: solid 5px #0e0e0e;
+    padding: 25px;
+    font-size: 2em;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all .2s linear;
+}
+.cta .mask p:hover{
+    cursor: pointer;
+}
+.cta .mask:hover{
+    opacity: 1;
+}
+/* Session Pop-up form */
+.popup-form{
+    padding: 2% 5%;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+.popup-form h4{
+    font-size: 3.5em;
+    text-shadow: 2px 1px 2px rgba(0,0,0,.6);
+}
+.popup-form .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0, .4);
+    transition: all .5s ease;
+}
+.popup-form .modal-content{
+    background-color: #7a1618;
+    border: 6px solid #0e0e0e;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 50%;
+    height: auto;
+}
+.popup-form .modal-content h4{
+    color: #f4f4f4;
+    font-size: 1.75em;
+}
+.popup-form .close{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: 700;
+}
+.popup-form .close:hover,
+.popup-form .close:focus{
+    color: #f0f0f0;
+    text-decoration: none;
+    cursor: pointer;
+}
+.popup-form .modal-content form{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.popup-form .modal-content form .popup-form-content{
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 0 50px;
+}
+.popup-form .modal-content form input,
+.popup-form .modal-content form textarea{
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+    color: #000;
+    background-color: #f8f8f8;
+}
+.popup-form .modal-content form input[type=submit]{
+    min-width: 100px;
+    width: 40%;
+}
+    /* review section */
+.reviews{
+    padding: 125px 0 150px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+.reviews > h2{
+    font-size: 3em;
+}
+.all-reviews{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.all-reviews div{
+    margin: 0 15px;
+}
+.stars .fa-star{
+    font-size: 2em;
+    margin: 20px 10px;
+}
+.star-checked {
+    color: orange;
+}
+.review p{
+    font-size: 2em;
+    width: 300px;
+}
+
+@media (max-width: 1000px) {
+    .desktop-nav{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    .cta {
+        flex-direction: column; /* Stack the divs on top of each other */
+        height: 800px; /* Adjust height to fit content */
+    }
+    .cta div:nth-child(1),
+    .cta div:nth-child(2) {
+        width: auto; /* Make the divs take up the full viewport width */
+        height: 100%; /* Adjust the height to prevent distortion */
+    }
+    .cta .mask{
+        opacity: 1;
+    }
+}
+@media (max-width: 600px) {
+    footer{
+        height: 200px;
+    }
+    footer .social-icons {
+        flex-wrap: wrap; /* Allow icons to wrap */
+        width: 100%;
+    }
+    footer .social-icons div a {
+        height: auto;
+        width: auto; /* Let the width scale naturally */
+        margin: 5px; /* Reduce margin to save space */
+        padding: 0;
+    }
+    .masthead .mask h1{
+        font-size: 4em;
+    }
+}
+@media (max-width: 400px) {
+    footer .footer-logo-holder{
+        height: 55%;
+    }
+    footer .social-icons div a {
+        height: auto;
+        width: auto; /* Let the width scale naturally */
+        margin: 2.5px; /* Reduce margin to save space */
+        padding: 0;
+    }
+    .masthead .mask h1{
+        font-size: 2.5em;
+    }
+    .company-mantra{
+        font-size: 1.5em;
+        padding: 100px 10%;
+    }
+    .reviews > h2{
+        font-size: 2em;
+    }
+    .stars .fa-star{
+        font-size: 1.5em;
+        margin: 20px 5px;
+    }
+    .all-reviews div{
+        margin: 0;
+    }
+    .review p{
+        font-size: 1.5em;
+        width: 200px;
+    }
+}
