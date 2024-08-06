@@ -1,8 +1,19 @@
-html{scroll-behavior: smooth;}
+/* font-family: "Roboto", sans-serif; 
+    font-family: "Play", sans-serif;
+    font-family: "Cuprum", sans-serif;
+    font-family: "Artifika", serif;*/
+
+html{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
 
 body{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     background-color: #fefefe;
+    background-color: #C4171E;
 }
 
 /* basic font styling */
@@ -44,6 +55,7 @@ header .desktop-nav menu li {
     margin-right: 20px;
 }
 header .desktop-nav menu li a{
+    font-family: "Play", sans-serif;
     font-size: 1.5rem;
     color: #fefefe;
 }
@@ -90,6 +102,7 @@ header .desktop-nav menu li a{
     background-color: #fefefe;
 }
 .mobile-nav menu li a {
+    font-family: "Play", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
@@ -100,6 +113,8 @@ header .desktop-nav menu li a{
 }
 /* footer */
 footer{
+    margin: 0;
+    padding: 0;
     height: 300px;
     display: flex;
     align-items: center;
@@ -122,6 +137,8 @@ footer .social-icons {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 /* the asformentioned social media icon box */
 footer .social-icons div{
@@ -158,6 +175,7 @@ footer .social-icons img:hover {
     height: 100%;
 }
 .masthead .mask h1{
+    font-family: "Play", sans-serif;
     color: #f8f8f8;
     text-shadow: 4px 3px 3px rgba(0,0,0,.8);
     font-size: 6em;
@@ -167,6 +185,7 @@ footer .social-icons img:hover {
 /* main */
     /* paragraph */
 .company-mantra{
+    font-family: "Artifika", serif;
     font-size: 2.5em;
     text-align: center;
     text-wrap: wrap;
@@ -205,6 +224,7 @@ footer .social-icons img:hover {
     transition: all .2s ease;
 }
 .cta .mask p{
+    font-family: "Play", sans-serif;
     background-color: #f8f8f8;
     color: #0e0e0e;
     border: solid 5px #0e0e0e;
