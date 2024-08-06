@@ -12,8 +12,7 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Artifika&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Play:wght@400;700&family=Roboto:ital,
-    wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="main-header">
@@ -36,7 +35,7 @@
             </div>
             <div>
                 <span class="mask">
-                    <a href="index.html"><p>SEE OUR PRODUCTS</p></a>
+                    <a href="products.html"><p>SEE OUR PRODUCTS</p></a>
                 </span>
             </div>
         </section>
@@ -46,8 +45,9 @@
               <!-- Modal content -->
               <div class="modal-content">
                 <span class="close">&times;</span>
-                <form action="somefile.php" method="post">
-                  <h4>Time Date and You</h4>
+                <!-- I know in an actual form you'd link it with a method type and usually a php file but because this is just css i wanted to have it not break -->
+                <form action="index.html">
+                  <h4>PICK A DAY</h4>
                   <div class="popup-form-content">
                     <input type="date" name="date">
                     <input type="text" name="fname" placeholder="First Name">
@@ -82,7 +82,7 @@
                         <span class="fa fa-star star-checked"></span>
                         <span class="fa fa-star star-checked"></span>
                     </div>
-                    <p>Their punches REALLY hurt, they know their stuff!</p>
+                    <p>I work here!</p>
                 </div>
     
                 <div class="review">
@@ -91,47 +91,16 @@
                         <span class="fa fa-star star-checked"></span>
                         <span class="fa fa-star star-checked"></span>
                         <span class="fa fa-star star-checked"></span>
-                        <span class="fa fa-star star-checked"></span>
+                        <span class="fa fa-star"></span>
                     </div>
-                    <p>Their punches REALLY hurt, they know their stuff!</p>
+                    <p>My grandma never stood a chance!</p>
                 </div>
             </div>
         </section>
     </main>
     <footer id="main-footer">
-        
         <script src="./js/header-footer.js"></script>
+        <script src="./js/home.js"></script>
     </footer>
-    <script>
-        var burger = document.getElementsByClassName("burger")[0];
-        var mobileNav = document.getElementsByClassName("mobile-nav")[0];
-        // Get the modal
-        var modal = document.getElementById("booking-modal");
-        // Get the button that opens the modal
-        var btn = document.getElementById("modalBtn");
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        burger.onclick = function() {
-            if(mobileNav.style.display == "none"){
-                mobileNav.style.display = "block"
-            }else {
-                mobileNav.style.display = "none"
-            }
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>

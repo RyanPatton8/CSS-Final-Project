@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="product-main">
+        <section>
+            <figure>
+                <img src="./img/Products/Gloves/Gloves 1.webp" alt="Everlast puching gloves">
+                <figcaption>Durable enough to withstand a hoard of your in-laws, the EverLast Elite Boxing Gloves BEAT their competitors in every categorey</figcaption>
+            </figure>
+            <div class="form-holder">
+                <h1>EverLast Elite Boxing Gloves</h1>
+                <form action="index.html">
+                    <p id="size-heading">Size:</p>
+                    <select>
+                        <option>10 oz</option>
+                        <option>12 oz</option>
+                        <option>14 oz</option>
+                        <option>16 oz</option>
+                    </select>
+                    <p id="color-heading">Color:</p>
+                    <div class="color-radio-holder">
+                        <input type="radio" name="color-radio" class="black radio" value="black">
+                        <input type="radio" name="color-radio" class="white radio" value="white">
+                        <input type="radio" name="color-radio" class="red radio" value="red">
+                        <input type="radio" name="color-radio" class="pink radio" value="pink">
+                        <input type="radio" name="color-radio" class="blue radio" value="blue">
+                    </div>
+                    <p id="shipping-heading">Shipping:</p>
+                    <div class="shipping-radio-holder">
+                        <div>
+                            <label for="regular">Regular</label>
+                            <input type="radio" name="shipping-radio" id="regular" class="reg radio" value="regular">
+                        </div>
+                        
+                        <div>
+                            <label for="express">Express</label>
+                            <input type="radio" name="shipping-radio" id="express" class="expr radio" value="express">
+                        </div>
+                    </div>
+                    <p class="price">$65</p>
+                    <div id="amount-holder">
+                        <p id="decrement">-</p>
+                        <input type="number" id="counter" value="1" min="1">
+                        <p id="increment">+</p>
+                    </div>
+                    <div class="button-holder">
+                        <input type="submit" name="add-to-cart" value="Add To Cart" class="add-cart">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <script src="./js/header-footer.js"></script>
+        <script src="./js/individual-product.js"></script>
+    </footer>
+    </body>
+</html>

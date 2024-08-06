@@ -3,14 +3,14 @@ const mainFooter = document.querySelector("#main-footer");
 
 mainHeader.innerHTML = `
         <div class="header-logo-holder">
-            <a href="#"><img src="./img/MainLogo.png" alt="Header main logo"></a>
+            <a href="index.html"><img src="./img/MainLogo.png" alt="Header main logo"></a>
         </div>
         <nav class="desktop-nav">
             <menu>
               <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Products</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="contact-us.html">Contact</a></li>
+              <li><a href="about-us.html">About Us</a></li>
               <li><a href="#">C</a></li>
             </menu>
         </nav>
@@ -23,7 +23,7 @@ mainHeader.innerHTML = `
             <menu>
               <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Products</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="gloves.html">Contact</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">View Checkout</a></li>
             </menu>
@@ -32,7 +32,7 @@ mainHeader.innerHTML = `
 
 mainFooter.innerHTML = `
         <div class="footer-logo-holder">
-            <a href="#"><img src="./img/MainLogo.png" alt="Header main logo"></a>
+            <a href="index.html"><img src="./img/MainLogo.png" alt="Header main logo"></a>
         </div>
         <div class="social-icons">
             <div>
@@ -45,3 +45,13 @@ mainFooter.innerHTML = `
             </div>
         </div> 
 `
+var burger = document.getElementsByClassName("burger")[0];
+var mobileNav = document.getElementsByClassName("mobile-nav")[0];
+
+burger.onclick = function() {
+    if(mobileNav.style.display == "none"){
+        mobileNav.style.display = "block"
+    }else {
+        mobileNav.style.display = "none"
+    }
+}

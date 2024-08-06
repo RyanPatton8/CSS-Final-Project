@@ -2,7 +2,6 @@
     font-family: "Play", sans-serif;
     font-family: "Cuprum", sans-serif;
     font-family: "Artifika", serif;*/
-
 html{
     scroll-behavior: smooth;
     margin: 0;
@@ -24,8 +23,6 @@ h1,h2,h3,h4,h5,h6{
 p,a,li,label,figcaption,td{
     text-decoration: none;
 }
-
-
 /* header */
 header{
     height: 200px;
@@ -58,6 +55,11 @@ header .desktop-nav menu li a{
     font-family: "Play", sans-serif;
     font-size: 1.5rem;
     color: #fefefe;
+}
+header .desktop-nav menu li a:hover{
+    text-shadow: 0px 0px 20px #fefefe,
+    0px 0px 40px #fefefe,
+    0px 0px 80px #fefefe;
 }
 .burger {
     background: none;
@@ -161,6 +163,9 @@ footer .social-icons img:hover {
 
 /* HOME */
 /* Masthead */
+main{
+    background: linear-gradient(to right, #500607,#861214,#500607);
+}
 .masthead{
     background-image: url("../img/MastHead1.jpg");
     background-size: cover;
@@ -225,18 +230,19 @@ footer .social-icons img:hover {
 }
 .cta .mask p{
     font-family: "Play", sans-serif;
-    background-color: #f8f8f8;
-    color: #0e0e0e;
-    border: solid 5px #0e0e0e;
+    background-color: none;
+    color: #fefefe;
+    border: solid 5px #fefefe;
     padding: 25px;
     font-size: 2em;
     text-align: center;
     padding: 15px;
     border-radius: 10px;
-    transition: all .2s linear;
+    transition: all .2s ease;
 }
 .cta .mask p:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 .cta .mask:hover{
     opacity: 1;
@@ -330,7 +336,7 @@ footer .social-icons img:hover {
 .all-reviews{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items:baseline;
     justify-content: center;
 }
 .all-reviews div{
@@ -348,24 +354,321 @@ footer .social-icons img:hover {
     width: 300px;
 }
 
+/* Products Page */
+.products-main{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.products-main section{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.products-main section h1,
+.products-main section h2,
+.products-main section h3{
+    font-family: "Play", sans-serif;
+    background-color: #fefefe;
+    padding: 30px 20px;
+}
+.products-main section .cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+.products-main section .cards .card{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 30px 15px;
+    height: 450px;
+    width: 300px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "img img" 
+        "name name"
+        "form form";
+}
+.products-main section .cards .card form{
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+
+    justify-items: flex-start;
+    text-align: left;
+}
+.products-main section .cards .card img{
+    grid-area: img;
+    width: 100%;
+    height: auto;
+    border-radius: 500px;
+}
+.products-main section .cards .card .product-name{
+    font-family: "Cuprum", sans-serif;
+    font-size: 1.3em;
+    grid-area: name;
+    padding-top: 5px;
+    text-align: center; 
+}
+.products-main section .cards .card .color-weight{
+    display: flex;
+    justify-content: space-around;
+}
+.color-radio-holder input[type="radio"]{
+    appearance: none;
+    border: 2px solid #0e0e0e;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+.color-radio-holder input[type="radio"]:checked{
+    transform: scale(.8);
+}
+.products-main section .cards .card select{
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+.products-main section .cards .card .button-holder{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 15px;
+}
+.button-holder p{
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+}
+.button-holder input[type="submit"]{
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    background-color: #fefefe;
+    color: #0e0e0e;
+    border-radius: 10px;
+    transition: all .20s ease;
+}
+.button-holder input[type="submit"]:hover{
+    color: #fefefe;
+    background: linear-gradient(to bottom, #500607,#861214,#500607);
+    cursor: pointer;
+}
+.products-main section .cards .card .sold-out{
+    font-family: "Play", sans-serif;
+    grid-area: form;
+    font-size: 2.5em;
+    color: #535353;
+    font-weight: 550;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.color-radio-holder .black{
+    background-color: #0e0e0e;
+}
+.color-radio-holder .white{
+    background-color: #fefefe;
+}
+.color-radio-holder .red{
+    background-color: red;
+}
+.color-radio-holder .pink{
+    background-color: pink;
+}
+.color-radio-holder .blue{
+    background-color: blue;
+}
+
+/* individual product pages */
+.product-main{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.product-main section{
+    display: flex;
+    margin: 100px 0;
+}
+.product-main section h1{
+    font-family: "Play", sans-serif;
+    font-size: 35px;
+}
+.product-main section figure{
+    background-color: #fefefe;
+    width: 500px;
+    text-align: center;
+}
+.product-main section figure img{
+    width: 100%;
+    height: auto;
+}
+.product-main section figure figcaption{
+    font-family: "Artifika", serif;
+    font-size: 1.25em;
+    padding: 10px;
+}
+.product-main section .form-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+    background-color: #f0f0f0;
+}
+.shipping-radio-holder input[type="radio"]{
+    appearance: none;
+    border: 1px solid #0e0e0e;
+    background-color: #fefefe;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+.shipping-radio-holder input[type="radio"]:checked{
+    border: 2px solid blue;
+}
+.product-main section .form-holder form #size-heading,
+.product-main section .form-holder form #color-heading,
+.product-main section .form-holder form #shipping-heading,
+.product-main section .form-holder form .price,
+.product-main section .form-holder form #amount-holder,
+.product-main section .form-holder form .button-holder{
+    font-family: "Cuprum", sans-serif;
+    font-size: 25px;
+    margin-top: 15px;
+}
+.product-main section .form-holder form select{
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+}
+.product-main section .form-holder form .color-radio-holder{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px 0;
+}
+.product-main section .form-holder form .color-radio-holder input{
+    width: 25px;
+    height: 25px;
+}
+.product-main section .form-holder form .shipping-radio-holder{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 15px 0;
+}
+.product-main section .form-holder form .shipping-radio-holder div{
+    display: flex;
+    align-items: center;
+}
+.product-main section .form-holder form .shipping-radio-holder div label{
+    padding-right: 10px;
+    font-size: 20px;
+}
+.product-main section .form-holder form .price{
+    font-family: "Roboto", sans-serif;
+    font-size: 3em;
+    margin: 30px 10px;
+}
+.product-main section .form-holder form #amount-holder{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.product-main section .form-holder form #amount-holder #increment,
+.product-main section .form-holder form #amount-holder #decrement{
+    padding: 20px;
+    background-color: #afafaf;
+    user-select: none;
+}
+.product-main section .form-holder form #amount-holder #increment:hover,
+.product-main section .form-holder form #amount-holder #decrement:hover{
+    cursor: pointer;
+}
+.product-main section .form-holder form #amount-holder #counter{
+    text-align: center;
+}
+.product-main section .form-holder form .button-holder{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+}
+.product-main section .form-holder form .button-holder input[type="submit"]{
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    width: 100%;
+    background-color: #fefefe;
+    color: #0e0e0e;
+    border-radius: 10px;
+    transition: all .20s ease;
+}
+.product-main section .form-holder form .button-holder input[type="submit"]:hover{
+    color: #fefefe;
+    background: linear-gradient(to bottom, #500607,#861214,#500607);
+    cursor: pointer;
+}
+
+.product-main section .no-size form #size-heading,
+.product-main section .no-size form #color-heading,
+.product-main section .no-size form #shipping-heading,
+.product-main section .no-size form .price,
+.product-main section .no-size form #amount-holder,
+.product-main section .no-size form .button-holder{
+    font-family: "Cuprum", sans-serif;
+    font-size: 25px;
+    margin-top: 40px;
+}
+.product-main section .no-size form .price{
+    font-family: "Roboto", sans-serif;
+    font-size: 3em;
+    margin: 30px 10px;
+}
 @media (max-width: 1000px) {
+    /* header footer */
     .desktop-nav{
         display: none;
     }
     .burger{
         display: block;
     }
+    /* home */
     .cta {
-        flex-direction: column; /* Stack the divs on top of each other */
-        height: 800px; /* Adjust height to fit content */
+        flex-direction: column;
+        height: 800px; 
     }
     .cta div:nth-child(1),
     .cta div:nth-child(2) {
-        width: auto; /* Make the divs take up the full viewport width */
-        height: 100%; /* Adjust the height to prevent distortion */
+        width: auto; 
+        height: 100%; 
     }
     .cta .mask{
         opacity: 1;
+    }
+    /* individual products */
+    .product-main section{
+        flex-direction: column;
+        margin: 0;
+    }
+    .product-main section figure{
+        width: 100%;
+    }
+    .product-main section .form-holder{
+        padding: 15px;
     }
 }
 @media (max-width: 600px) {
@@ -373,13 +676,13 @@ footer .social-icons img:hover {
         height: 200px;
     }
     footer .social-icons {
-        flex-wrap: wrap; /* Allow icons to wrap */
+        flex-wrap: wrap;
         width: 100%;
     }
     footer .social-icons div a {
         height: auto;
-        width: auto; /* Let the width scale naturally */
-        margin: 5px; /* Reduce margin to save space */
+        width: auto; 
+        margin: 5px;
         padding: 0;
     }
     .masthead .mask h1{
@@ -392,8 +695,8 @@ footer .social-icons img:hover {
     }
     footer .social-icons div a {
         height: auto;
-        width: auto; /* Let the width scale naturally */
-        margin: 2.5px; /* Reduce margin to save space */
+        width: auto;
+        margin: 2.5px; 
         padding: 0;
     }
     .masthead .mask h1{
