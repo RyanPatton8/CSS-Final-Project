@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- adds all characters and emojis  -->
     <meta charset="UTF-8">
+    <!-- adjust viewport to match device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <!-- adds description for search engine -->
+    <meta name="description" content="A tasty looking website for werthers cream filled caramels">
+    <!-- ensures website wont appear on search engine -->
+    <meta name="robots" content="noindex, nofollow">
+    <!-- title of page that appears in tab -->
+    <title>Tom's Fitness Depot</title>
+    <!-- add favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/MainLogo.png">
     <!-- add our css -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -15,50 +24,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Artifika&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="main-header">
-
-    </header>
+    <!-- header is inserted with js -->
+    <header id="main-header"></header>
+    <!-- standard masthead with a semitransparent mask -->
     <section class="masthead">
         <div class="mask">
             <h1>FOR THE FEARLESS</h1>
         </div>
     </section>
+
     <main>
+        <!-- i didnt exactly know what to call this but its like what the company lives by -->
         <p class="company-mantra">
             We settle for nothing but the best both on and off the mat, with premium gear and expirienced fighters
         </p>
+        <!-- my call to actions one brings up the pop-up form below the other takes you to the product page -->
         <section class="cta">
             <div>
                 <span class="mask">
-                    <p id="modalBtn">BOOK A LESSON</p>
+                    <button id="modalBtn">BOOK A LESSON</button>
                 </span>
             </div>
             <div>
                 <span class="mask">
-                    <a href="products.html"><p>SEE OUR PRODUCTS</p></a>
+                    <a href="products.html">SEE OUR PRODUCTS</a>
                 </span>
             </div>
         </section>
+        <!-- said pop-up form -->
         <section class="popup-form">
             <!-- The Modal -->
             <div id="booking-modal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <!-- I know in an actual form you'd link it with a method type and usually a php file but because this is just css i wanted to have it not break -->
-                <form action="index.html">
-                  <h4>PICK A DAY</h4>
-                  <div class="popup-form-content">
-                    <input type="date" name="date">
-                    <input type="text" name="fname" placeholder="First Name">
-                    <input type="text" name="lname" placeholder="Last Name">
-                    <input type="email" name="email" placeholder="Your Email">
-                    <div>
-                        <input type="submit" value="Submit" name="submit">
-                    </div>
-                  </div>
-                </form>
-          </section>
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!-- I know in an actual form you'd link it with a method type and usually a php file but because this is just css i wanted to have it not break -->
+                    <form action="index.html">
+                        <h4>PICK A DAY</h4>
+                        <div class="popup-form-content">
+                            <input type="date" name="date">
+                            <input type="text" name="fname" placeholder="First Name">
+                            <input type="text" name="lname" placeholder="Last Name">
+                            <input type="email" name="email" placeholder="Your Email">
+                            
+                            <input type="submit" value="Submit" name="submit">
+                            
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </section>
+        <!-- a little review panel i wanted to animate it sliding in and out having an array of reviews but simply did not have the time -->
         <section class="reviews">
             <h2>DON'T JUST TAKE OUR WORD FOR IT</h2>
 
@@ -98,6 +114,7 @@
             </div>
         </section>
     </main>
+    <!-- footer holds scripts to insert itsself and the header aswell as controlls the popup-form -->
     <footer id="main-footer">
         <script src="./js/header-footer.js"></script>
         <script src="./js/home.js"></script>

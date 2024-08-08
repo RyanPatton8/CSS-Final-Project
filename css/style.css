@@ -1,31 +1,50 @@
-/* font-family: "Roboto", sans-serif; 
+/*
+    Fonts:
+
+    font-family: "Roboto", sans-serif; 
     font-family: "Play", sans-serif;
     font-family: "Cuprum", sans-serif;
-    font-family: "Artifika", serif;*/
-html{
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-}
+    font-family: "Artifika", serif;
 
+    colors:
+
+    #cf1316     brightest red
+    #C4171E     bright red
+    #330505     extremely dark red
+    #500607     very dark red
+    #861214     medium red
+    #7a1618     medium dark red
+    #B52F31     faded red
+
+    #0e0e0e     black
+    #fefefe     white
+    #f0f0f0     light grey
+    #242424     charcoal grey
+    #535353     medium grey
+
+    #FFAEC9	    pink
+    #0300ED     blue
+    #ED9600     orange
+*/
+
+html{scroll-behavior: smooth;}
+
+/* in all honesty there was a strange gap beneath the footer i couldnt find and this "fills" it */
 body{
-    margin: 0;
-    padding: 0;
-    background-color: #fefefe;
     background-color: #C4171E;
 }
-
 /* basic font styling */
 h1,h2,h3,h4,h5,h6{
     font-size: 1.5em;
 }
-
 p,a,li,label,figcaption,td{
     text-decoration: none;
 }
 /* header */
+/* for the header i dont really do anything crazy until the mobile header just standard stuff */
 header{
     height: 200px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,12 +74,26 @@ header .desktop-nav menu li a{
     font-family: "Play", sans-serif;
     font-size: 1.5rem;
     color: #fefefe;
+    transition: transform 0.5s ease;
+}
+header .desktop-nav menu li a img{
+    height: 20px;
+    width: auto;
+    transition: transform 0.5s ease;
+}
+header .desktop-nav menu li a img:hover{
+    filter: drop-shadow(0 0 20px #fefefe) 
+    drop-shadow(0 0 20px #fefefe)
+    drop-shadow(0 0 60px #fefefe);
+    
 }
 header .desktop-nav menu li a:hover{
     text-shadow: 0px 0px 20px #fefefe,
     0px 0px 40px #fefefe,
     0px 0px 80px #fefefe;
 }
+/* basically the burger is a button that brings up the mobile nav the same way you did the contact form
+display none it becomes visable via media query as does the mobile cart */
 .burger {
     background: none;
     border: none;
@@ -83,13 +116,23 @@ header .desktop-nav menu li a:hover{
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 200px; /* Position below the header */
+    top: 200px;
     left: 0;
     width: 100vw;
     background: #f0f0f0;    
     z-index: 3;
     transition: .5s;
     transition-delay: .5s;
+}
+.mobile-cart{
+    display: none;
+    height: 30px;
+    width: auto;
+    padding-right: 25px;
+}
+.mobile-cart img{
+    height: 100%;
+    width: auto;
 }
 .mobile-nav menu {
     list-style: none;
@@ -113,7 +156,10 @@ header .desktop-nav menu li a:hover{
     display: block;
     padding: 30px;
 }
+
 /* footer */
+/* the footer is relatively plain i couldnt seem to figure out how to get access to  font awesome fonts for free so i used images with anchors
+probably caused my self more trouble than necessary but oh well */
 footer{
     margin: 0;
     padding: 0;
@@ -140,29 +186,26 @@ footer .social-icons {
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 0 50px;
 }
-/* the asformentioned social media icon box */
 footer .social-icons div{
-    height: 25%; /* Adjust height to auto */
+    height: 25%;
     width: auto;
     display: flex;
 }
-/* the images themselves */
 footer .social-icons div img {
     margin: 0 10px;
     padding: 0 10px;
-    height: 100%; /* Set a fixed height for social media icons */
+    height: 100%; 
     width: auto;
     transition: all .25s ease;
 }
-/* alittle hover to clearly show which logo is being chosen */
 footer .social-icons img:hover {
     transform: scale(1.2);
 }
 
 /* HOME */
-/* Masthead */
+    /* Masthead */
 main{
     background: linear-gradient(to right, #500607,#861214,#500607);
 }
@@ -181,7 +224,7 @@ main{
 }
 .masthead .mask h1{
     font-family: "Play", sans-serif;
-    color: #f8f8f8;
+    color: #fefefe;
     text-shadow: 4px 3px 3px rgba(0,0,0,.8);
     font-size: 6em;
     text-align: center;
@@ -199,6 +242,7 @@ main{
     color: #fefefe;
 }
     /* call to action */
+    /* i set the background image based on the child relationship and make them only take up half the screen */
 .cta{
     display: flex;
     height: 500px;
@@ -218,6 +262,7 @@ main{
     height: auto;
     width: 50%;
 }
+/* inside the div sits a mask which i use to display none and place a semi transparent filter over top of the image inside that is a element that functions like/is a button */
 .cta .mask {
     background-color: rgba(2, 2, 0, .7);
     background-blend-mode: overlay;
@@ -228,9 +273,10 @@ main{
     opacity: 0;
     transition: all .2s ease;
 }
-.cta .mask p{
+.cta .mask button,
+.cta .mask a{
     font-family: "Play", sans-serif;
-    background-color: none;
+    background-color: transparent;
     color: #fefefe;
     border: solid 5px #fefefe;
     padding: 25px;
@@ -240,7 +286,8 @@ main{
     border-radius: 10px;
     transition: all .2s ease;
 }
-.cta .mask p:hover{
+.cta .mask button:hover,
+.cta .mask a:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -248,8 +295,9 @@ main{
     opacity: 1;
 }
 /* Session Pop-up form */
+    /* standard form stuff although the sizing for the elements was abit jenky so i had to do lots of tweaking even still it isnt quite perfect. I did use your pop-up form as a
+    hard template which is why the classes are named the same though you should notice plenty of changes */
 .popup-form{
-    padding: 2% 5%;
     text-align: center;
     background-color: #f0f0f0;
 }
@@ -270,57 +318,58 @@ main{
     transition: all .5s ease;
 }
 .popup-form .modal-content{
-    background-color: #7a1618;
+    background-color: #861214;
     border: 6px solid #0e0e0e;
     margin: 15% auto;
     padding: 20px;
     border-radius: 15px;
     width: 50%;
     height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .popup-form .modal-content h4{
-    color: #f4f4f4;
+    color: #fefefe;
     font-size: 1.75em;
 }
 .popup-form .close{
-    color: #aaa;
-    float: right;
+    color: #b3b3b3;
     font-size: 28px;
     font-weight: 700;
 }
 .popup-form .close:hover,
 .popup-form .close:focus{
     color: #f0f0f0;
-    text-decoration: none;
     cursor: pointer;
 }
 .popup-form .modal-content form{
-    width: 100%;
+    width: 80%;
     height: auto;
     text-align: center;
+    padding-right: 5%;
 }
 .popup-form .modal-content form .popup-form-content{
     justify-content: center;
     align-items: center;
     margin: 15px;
-    padding: 0 50px;
 }
 .popup-form .modal-content form input,
 .popup-form .modal-content form textarea{
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
     padding: 15px;
-    outline: none;
     border: 2px solid #0e0e0e;
     border-radius: 5px;
-    color: #000;
-    background-color: #f8f8f8;
+    color: #0e0e0e;
+    background-color: #fefefe;
 }
 .popup-form .modal-content form input[type=submit]{
-    min-width: 100px;
-    width: 40%;
+    width: 80%;
+    margin-left: 5%;
 }
     /* review section */
+/* very simple flex box section that uses the one font awesome thing i was able to find off of w3schools to create a nice looking review display */
 .reviews{
     padding: 125px 0 150px 0;
     text-align: center;
@@ -347,7 +396,7 @@ main{
     margin: 20px 10px;
 }
 .star-checked {
-    color: orange;
+    color: #ED9600;
 }
 .review p{
     font-size: 2em;
@@ -355,13 +404,13 @@ main{
 }
 
 /* Products Page */
+/* leaving the index.html into the products page as i state in the html comments this is just a very simple (other than the cards themselves) series of flexboxes */
 .products-main{
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
 }
-
 .products-main section{
     display: flex;
     flex-direction: column;
@@ -380,6 +429,7 @@ main{
     flex-wrap: wrap;
     padding: 10px 0;
 }
+/* i attempted to do everything for the card with grid at one point but by golly it was problems so i decided to just do the initial layout */
 .products-main section .cards .card{
     background-color: #f0f0f0;
     border-radius: 10px;
@@ -395,6 +445,7 @@ main{
         "name name"
         "form form";
 }
+/* the form is just a flexbox form but small */
 .products-main section .cards .card form{
     grid-area: form;
     display: flex;
@@ -407,6 +458,8 @@ main{
     grid-area: img;
     width: 100%;
     height: auto;
+    /* just wanted to make card images a circle */
+    clip-path: circle(50% at 50% 50%);
     border-radius: 500px;
 }
 .products-main section .cards .card .product-name{
@@ -416,6 +469,7 @@ main{
     padding-top: 5px;
     text-align: center; 
 }
+/* color-weight is a container for the color... and the weight */
 .products-main section .cards .card .color-weight{
     display: flex;
     justify-content: space-around;
@@ -472,6 +526,7 @@ main{
     width: 100%;
     margin-bottom: 10px;
 }
+/* i added specialty classes to each radio button that change the color to the proper one */
 .color-radio-holder .black{
     background-color: #0e0e0e;
 }
@@ -479,16 +534,18 @@ main{
     background-color: #fefefe;
 }
 .color-radio-holder .red{
-    background-color: red;
+    background-color: #C4171E;
 }
 .color-radio-holder .pink{
-    background-color: pink;
+    background-color: #FFAEC9;
 }
 .color-radio-holder .blue{
-    background-color: blue;
+    background-color: #0300ED;
 }
 
 /* individual product pages */
+/* each of the individual product pages basically a flex box with 2 main flexboxes inside both columns 
+so that you get a sort of card thing on the left and a nice form on the right. this one took some time to make responsive*/
 .product-main{
     display: flex;
     flex-direction: column;
@@ -514,6 +571,7 @@ main{
 }
 .product-main section figure figcaption{
     font-family: "Artifika", serif;
+    line-height: 1.5;
     font-size: 1.25em;
     padding: 10px;
 }
@@ -524,6 +582,8 @@ main{
     padding: 30px;
     background-color: #f0f0f0;
 }
+/* heres the fun stuff, initially i made the radio button border turn blue on checked but that looked REALLY terrible so i built an animation based on what i was messing with 
+in the review lecture to make it look epic */
 .shipping-radio-holder input[type="radio"]{
     appearance: none;
     border: 1px solid #0e0e0e;
@@ -534,10 +594,62 @@ main{
     outline: none;
     cursor: pointer;
     transition: all .1s ease;
+    animation-name: noShipping;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
 }
 .shipping-radio-holder input[type="radio"]:checked{
-    border: 2px solid blue;
+    background-color: #cf1316;
+    animation-name: shipping;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
 }
+/* idk if youre using an ide that shows the color next to a color declaration like me but its actually strangely visual
+if not i basically increase how red the radio button is from the middle every 20% of .2 seconds by 20% which sounds very confusing im sure but
+im also sure you completely understand
+
+i do the reverse when not active so the effect reverses*/
+@keyframes shipping{
+    0%{
+        background: #fefefe;
+    }
+    20%{
+        background: radial-gradient(#cf1316, #fefefe, #fefefe, #fefefe, #fefefe);
+    }
+    40%{
+        background: radial-gradient(#cf1316, #cf1316, #fefefe, #fefefe, #fefefe);
+    }
+    60%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #fefefe, #fefefe);
+    }
+    80%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #cf1316, #fefefe);
+    }
+    100%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #cf1316, #cf1316);
+    }
+}
+@keyframes noShipping{
+    0%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #cf1316, #cf1316);
+    }
+    20%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #cf1316, #fefefe);
+    }
+    40%{
+        background: radial-gradient(#cf1316, #cf1316, #cf1316, #fefefe, #fefefe);
+    }
+    60%{
+        background: radial-gradient(#cf1316, #cf1316, #fefefe, #fefefe, #fefefe);
+    }
+    80%{
+        background: radial-gradient(#cf1316, #fefefe, #fefefe, #fefefe, #fefefe);
+    }
+    100%{
+        background: radial-gradient(#fefefe, #fefefe, #fefefe, #fefefe, #fefefe);
+    }
+}
+/* i just knew that would be alot of code repitition */
 .product-main section .form-holder form #size-heading,
 .product-main section .form-holder form #color-heading,
 .product-main section .form-holder form #shipping-heading,
@@ -584,6 +696,7 @@ main{
     font-size: 3em;
     margin: 30px 10px;
 }
+/* this section is just for the number counter thing */
 .product-main section .form-holder form #amount-holder{
     display: flex;
     justify-content: center;
@@ -617,12 +730,14 @@ main{
     border-radius: 10px;
     transition: all .20s ease;
 }
+/* the hover effect is identical to the product page i use the same logic for the main background but this is to bottom instead */
 .product-main section .form-holder form .button-holder input[type="submit"]:hover{
     color: #fefefe;
     background: linear-gradient(to bottom, #500607,#861214,#500607);
     cursor: pointer;
 }
-
+/* i had to scroll up and down a good three times before writing this comment to make sure i wasnt crazy, i then realized this is for the two products that dont
+require weight and as such require a larger margin-top */
 .product-main section .no-size form #size-heading,
 .product-main section .no-size form #color-heading,
 .product-main section .no-size form #shipping-heading,
@@ -638,6 +753,253 @@ main{
     font-size: 3em;
     margin: 30px 10px;
 }
+
+/* Contact Us */
+/* very basic contact form until the animation stuff at the end */
+.contact-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(#242424, #0e0e0e );
+}
+.contact-main form{
+    margin: 100px 0;
+    height: 80%;
+    width: 60%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #7a1618;
+    border: 3px solid #0e0e0e;
+    border-radius: 10px;
+}
+.contact-main form h1{
+    margin-bottom: 50px;
+    font-size: 3.5em;
+    font-family: "Play", sans-serif;
+    color: #fefefe;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.8);
+}
+.contact-main form .name-holder{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.contact-main form .name-holder input{
+    margin: 0 15px;
+    flex: 1;
+    padding: 10px;
+    font-size: 1.25em;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+}
+.contact-main form .recieve-emails-holder{
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-main form input[type="email"]{
+    margin: 15px;
+    padding: 15px;
+    font-size: 1.25em;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+}
+.contact-main form #comments{
+    margin: 15px;
+    height: 150px;
+    width: auto;
+    vertical-align: top;
+    padding: 10px;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+}
+.contact-main form #comments:focus,
+.contact-main form .name-holder input:focus,
+.contact-main form input[type="email"]:focus{
+    border-color: #fefefe;
+    border: 3px solid #fefefe;
+}
+/* this is basically the same as the radio buttons from earlier except using linear, although funnily enough i wrote this first and went back to change the radio buttons
+(by this i mean the code this comment is written after the fact at 9:08pm on the due date) */
+.contact-main form input[type="submit"]{
+    padding: 15px;
+    margin: 0 15px 30px 15px;
+    border: 2px solid #0e0e0e;
+    border-radius: 5px;
+    background-color: #fefefe;
+    color: #0e0e0e;
+    animation-name: dry;
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    font-family: "Cuprum", sans-serif;
+    font-size: 1em;
+}
+.contact-main form input[type="submit"]:hover{
+    animation-name: wash;
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    background-color: #0e0e0e;
+    color: #fefefe;
+    font-weight: 600;
+    cursor: pointer;
+}
+@keyframes wash{
+    0%{
+        background: #fefefe;
+    }
+    20%{
+        background: linear-gradient(to right,#0e0e0e, #fefefe, #fefefe, #fefefe, #fefefe);
+    }
+    40%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #fefefe, #fefefe, #fefefe);
+    }
+    60%{
+        color: #fefefe;
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #fefefe, #fefefe);
+    }
+    80%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e, #fefefe);
+    }
+    100%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e);
+    }
+}
+@keyframes dry{
+    0%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e);
+    }
+    20%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e, #fefefe);
+    }
+    40%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #0e0e0e, #fefefe, #fefefe);
+        color: #0e0e0e;
+    }
+    60%{
+        background: linear-gradient(to right,#0e0e0e, #0e0e0e, #fefefe, #fefefe, #fefefe);
+    }
+    80%{
+        background: linear-gradient(to right,#0e0e0e, #fefefe, #fefefe, #fefefe, #fefefe);
+    }
+    100%{
+        background: linear-gradient(to right,#fefefe, #fefefe, #fefefe, #fefefe, #fefefe);;
+    }
+}
+.contact-main form p{
+    display: flex;
+    justify-self: flex-start;
+    margin-left: 20px;
+    font-size: 1.25em;
+    font-family: "Artifika", serif;
+    color: #fefefe;
+}
+.contact-main form .recieve-emails-holder label{
+    font-size: 1.25em;
+    font-family: "Artifika", serif;
+    color: #fefefe;
+    padding: 0 20px;
+}
+.contact-main form .recieve-emails-holder input{
+    appearance: none;
+    border: 10px solid #fefefe;
+    background-color: #fefefe;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+/* i took what you said about not needing key frames and did it i also make the border take up the entire visable size initially because i wanted to simulate an
+animation but now its necessity because the button looked wack on smaller viewports without it*/
+.contact-main form .recieve-emails-holder input:checked{
+    border: 10px solid #cf1316;
+    width: 10px;
+    height: 10px;
+    transform: rotate(720deg);
+}
+
+/* about us */
+/* honestly I dont have much to say bout this, another very simple flexbox layout */
+.about-us-main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(to bottom, #330505,#861214,#330505);
+}
+.about-us-main section{
+    margin: 80px 0 50px 0;
+}
+.about-us-main .founder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 30px #fefefe) 
+    drop-shadow(0 0 50px #fefefe);
+}
+.about-us-main .founder .tom-img-holder{
+    height: 800px;
+}
+.about-us-main .founder .tom-img-holder img{
+    height: 100%;
+    width: auto;
+}
+.about-us-main section h1,
+.about-us-main section h2{
+    font-size: 3em;
+    color: #fefefe;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.8);
+    font-family: "Play", sans-serif;
+}
+.about-us-main section p{
+    font-family: "Artifika", serif;
+}
+.about-us-main .founder p {
+    background-color: #fefefe;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    font-size: 1.2em;
+    border: 4px solid #0e0e0e;
+    border-radius: 10px;
+    margin: 10px 0 0 0 ;
+}
+
+.about-us-main .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+.about-us-main .home .location-img-holder{
+    height: 600px;
+}
+.about-us-main .home .location-img-holder img{
+    height: 100%;
+    width: auto;
+    border: 4px solid #0e0e0e;
+}
+.about-us-main .home p {
+    background-color: #fefefe;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 4px solid #0e0e0e;
+    border-radius: 10px;
+    margin: 10px 0 0 0 ;
+}
+
+/* media queries */
+/* I did what I had to here to get this to work the about us has more media queries than im proud of but it works on all viewports*/
 @media (max-width: 1000px) {
     /* header footer */
     .desktop-nav{
@@ -645,6 +1007,12 @@ main{
     }
     .burger{
         display: block;
+    }
+    .mobile-cart{
+        display: block;
+    }
+    footer .social-icons {
+        padding: 0;
     }
     /* home */
     .cta {
@@ -659,19 +1027,38 @@ main{
     .cta .mask{
         opacity: 1;
     }
+    .popup-form .modal-content{
+        width:80%;
+    }
     /* individual products */
     .product-main section{
         flex-direction: column;
         margin: 0;
     }
-    .product-main section figure{
+    .product-main section p{
         width: 100%;
     }
     .product-main section .form-holder{
         padding: 15px;
     }
+    /* contact form */
+    .contact-main form .name-holder{
+        flex-direction: column;
+    }
+    .contact-main form .name-holder input{
+        margin: 10px 15px;
+    }
+    .about-us-main .home .location-img-holder{
+        height: 400px;
+    }
+}
+@media (max-width: 800px) {
+    .about-us-main .home .location-img-holder{
+        height: 350px;
+    }
 }
 @media (max-width: 600px) {
+    /* header footer */
     footer{
         height: 200px;
     }
@@ -685,11 +1072,42 @@ main{
         margin: 5px;
         padding: 0;
     }
+    /* home */
     .masthead .mask h1{
         font-size: 4em;
     }
+    /* contact */
+    .contact-main form{
+        width: 80%;
+    }
+    .contact-main form .recieve-emails-holder{
+        margin: 0;
+    }
+    .contact-main form .recieve-emails-holder label{
+        font-size: 1em;
+        padding: 0;
+    }
+    .contact-main form h1{
+        margin-bottom: 20px;
+    }
+    /* individual product */
+    .product-main section figure{
+        width: 100%;
+    }
+    .about-us-main .founder .tom-img-holder{
+        height: 600px;
+    }
+    .about-us-main .home .location-img-holder{
+        height: 250px;
+    }
+}
+@media (max-width: 460px) {
+    .about-us-main .founder .tom-img-holder{
+        height: 450px;
+    }
 }
 @media (max-width: 400px) {
+    /* header footer */
     footer .footer-logo-holder{
         height: 55%;
     }
@@ -699,6 +1117,7 @@ main{
         margin: 2.5px; 
         padding: 0;
     }
+    /* home */
     .masthead .mask h1{
         font-size: 2.5em;
     }
@@ -719,5 +1138,8 @@ main{
     .review p{
         font-size: 1.5em;
         width: 200px;
+    }
+    .about-us-main .home .location-img-holder{
+        height: 200px;
     }
 }
